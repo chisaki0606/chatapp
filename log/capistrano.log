@@ -1,0 +1,606 @@
+# Logfile created on 2019-10-04 16:22:37 +0900 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-04 16:22:37 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [beca7efd] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as ec2-user@54.64.175.101
+ DEBUG [beca7efd] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [beca7efd] Finished in 0.985 seconds with exit status 0 (successful).
+  INFO [6700e2ae] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.64.175.101
+ DEBUG [6700e2ae] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [6700e2ae] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-chatspace-again-production-Chisaki.sh 0.0%
+  INFO Uploading /tmp/git-ssh-chatspace-again-production-Chisaki.sh 100.0%
+  INFO [0b6b07dc] Running /usr/bin/env chmod 700 /tmp/git-ssh-chatspace-again-production-Chisaki.sh as ec2-user@54.64.175.101
+ DEBUG [0b6b07dc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-chatspace-again-production-Chisaki.sh )
+  INFO [0b6b07dc] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [e73b3def] Running /usr/bin/env git ls-remote git@github.com:ibe0606/chatspace-again.git HEAD as ec2-user@54.64.175.101
+ DEBUG [e73b3def] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git ls-remote git@github.com:ibe0606/chatspace-again.git HEAD )
+ DEBUG [e73b3def] 	Warning: Permanently added the RSA host key for IP address '13.114.40.48' to the list of known hosts.
+ DEBUG [e73b3def] 	28073f2b84ba444ff43319049b1605bded908b8e	HEAD
+  INFO [e73b3def] Finished in 2.023 seconds with exit status 0 (successful).
+  INFO [e9bfc952] Running /usr/bin/env mkdir -p /var/www/chatspace-again/shared /var/www/chatspace-again/releases as ec2-user@54.64.175.101
+ DEBUG [e9bfc952] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/shared /var/www/chatspace-again/releases )
+  INFO [e9bfc952] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [5f0768fd] Running /usr/bin/env mkdir -p /var/www/chatspace-again/shared/log /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/shared/public/assets as ec2-user@54.64.175.101
+ DEBUG [5f0768fd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/shared/log /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/shared/public/assets )
+  INFO [5f0768fd] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [70712de1] Running [ -f /var/www/chatspace-again/current/REVISION ] as ec2-user@54.64.175.101
+ DEBUG [70712de1] Command: [ -f /var/www/chatspace-again/current/REVISION ]
+ DEBUG [70712de1] Finished in 0.132 seconds with exit status 1 (failed).
+ DEBUG [30cd3cc9] Running [ -f /var/www/chatspace-again/repo/HEAD ] as ec2-user@54.64.175.101
+ DEBUG [30cd3cc9] Command: [ -f /var/www/chatspace-again/repo/HEAD ]
+ DEBUG [30cd3cc9] Finished in 0.117 seconds with exit status 1 (failed).
+ DEBUG [ab62f609] Running if test ! -d /var/www/chatspace-again; then echo "Directory does not exist '/var/www/chatspace-again'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [ab62f609] Command: if test ! -d /var/www/chatspace-again; then echo "Directory does not exist '/var/www/chatspace-again'" 1>&2; false; fi
+ DEBUG [ab62f609] Finished in 0.125 seconds with exit status 0 (successful).
+  INFO [9cd3ed05] Running /usr/bin/env git clone --mirror git@github.com:ibe0606/chatspace-again.git /var/www/chatspace-again/repo as ec2-user@54.64.175.101
+ DEBUG [9cd3ed05] Command: cd /var/www/chatspace-again && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git clone --mirror git@github.com:ibe0606/chatspace-again.git /var/www/chatspace-again/repo )
+ DEBUG [9cd3ed05] 	Cloning into bare repository '/var/www/chatspace-again/repo'...
+  INFO [9cd3ed05] Finished in 2.302 seconds with exit status 0 (successful).
+ DEBUG [0e45f04e] Running if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [0e45f04e] Command: if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi
+ DEBUG [0e45f04e] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [ec32ab97] Running /usr/bin/env git remote set-url origin git@github.com:ibe0606/chatspace-again.git as ec2-user@54.64.175.101
+ DEBUG [ec32ab97] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git remote set-url origin git@github.com:ibe0606/chatspace-again.git )
+  INFO [ec32ab97] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [4e52d7e7] Running /usr/bin/env git remote update --prune as ec2-user@54.64.175.101
+ DEBUG [4e52d7e7] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4e52d7e7] 	Fetching origin
+  INFO [4e52d7e7] Finished in 2.059 seconds with exit status 0 (successful).
+ DEBUG [503b2486] Running if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [503b2486] Command: if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi
+ DEBUG [503b2486] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [7589912e] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004072241 as ec2-user@54.64.175.101
+ DEBUG [7589912e] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004072241 )
+  INFO [7589912e] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [6b9a6052] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/chatspace-again/releases/20191004072241 as ec2-user@54.64.175.101
+ DEBUG [6b9a6052] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/chatspace-again/releases/20191004072241 )
+  INFO [6b9a6052] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [efbafb1e] Running if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [efbafb1e] Command: if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi
+ DEBUG [efbafb1e] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [7bc744ed] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@54.64.175.101
+ DEBUG [7bc744ed] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7bc744ed] 	28073f2b84ba444ff43319049b1605bded908b8e
+ DEBUG [7bc744ed] Finished in 0.124 seconds with exit status 0 (successful).
+ DEBUG [f2b3e834] Running if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [f2b3e834] Command: if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi
+ DEBUG [f2b3e834] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [ba2a9240] Running /usr/bin/env echo "28073f2b84ba444ff43319049b1605bded908b8e" > REVISION as ec2-user@54.64.175.101
+ DEBUG [ba2a9240] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "28073f2b84ba444ff43319049b1605bded908b8e" > REVISION )
+  INFO [ba2a9240] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [40b7d8e8] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004072241 /var/www/chatspace-again/releases/20191004072241/tmp /var/www/chatspace-again/releases/20191004072241/vendor /var/www/chatspace-again/releases/20191004072241/public as ec2-user@54.64.175.101
+ DEBUG [40b7d8e8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004072241 /var/www/chatspace-again/releases/20191004072241/tmp /var/www/chatspace-again/releases/20191004072241/vendor /var/www/chatspace-again/releases/20191004072241/public )
+  INFO [40b7d8e8] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [f39e1d0b] Running [ -L /var/www/chatspace-again/releases/20191004072241/log ] as ec2-user@54.64.175.101
+ DEBUG [f39e1d0b] Command: [ -L /var/www/chatspace-again/releases/20191004072241/log ]
+ DEBUG [f39e1d0b] Finished in 0.118 seconds with exit status 1 (failed).
+ DEBUG [b5e3eaa6] Running [ -d /var/www/chatspace-again/releases/20191004072241/log ] as ec2-user@54.64.175.101
+ DEBUG [b5e3eaa6] Command: [ -d /var/www/chatspace-again/releases/20191004072241/log ]
+ DEBUG [b5e3eaa6] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [445cf608] Running /usr/bin/env rm -rf /var/www/chatspace-again/releases/20191004072241/log as ec2-user@54.64.175.101
+ DEBUG [445cf608] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /var/www/chatspace-again/releases/20191004072241/log )
+  INFO [445cf608] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [e82536ae] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/log /var/www/chatspace-again/releases/20191004072241/log as ec2-user@54.64.175.101
+ DEBUG [e82536ae] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/log /var/www/chatspace-again/releases/20191004072241/log )
+  INFO [e82536ae] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [95613d4e] Running [ -L /var/www/chatspace-again/releases/20191004072241/tmp/pids ] as ec2-user@54.64.175.101
+ DEBUG [95613d4e] Command: [ -L /var/www/chatspace-again/releases/20191004072241/tmp/pids ]
+ DEBUG [95613d4e] Finished in 0.116 seconds with exit status 1 (failed).
+ DEBUG [a888ebfc] Running [ -d /var/www/chatspace-again/releases/20191004072241/tmp/pids ] as ec2-user@54.64.175.101
+ DEBUG [a888ebfc] Command: [ -d /var/www/chatspace-again/releases/20191004072241/tmp/pids ]
+ DEBUG [a888ebfc] Finished in 0.120 seconds with exit status 1 (failed).
+  INFO [44e62198] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/releases/20191004072241/tmp/pids as ec2-user@54.64.175.101
+ DEBUG [44e62198] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/releases/20191004072241/tmp/pids )
+  INFO [44e62198] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [46dc8368] Running [ -L /var/www/chatspace-again/releases/20191004072241/tmp/cache ] as ec2-user@54.64.175.101
+ DEBUG [46dc8368] Command: [ -L /var/www/chatspace-again/releases/20191004072241/tmp/cache ]
+ DEBUG [46dc8368] Finished in 0.116 seconds with exit status 1 (failed).
+ DEBUG [539d46c2] Running [ -d /var/www/chatspace-again/releases/20191004072241/tmp/cache ] as ec2-user@54.64.175.101
+ DEBUG [539d46c2] Command: [ -d /var/www/chatspace-again/releases/20191004072241/tmp/cache ]
+ DEBUG [539d46c2] Finished in 0.118 seconds with exit status 1 (failed).
+  INFO [607d4f9b] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/releases/20191004072241/tmp/cache as ec2-user@54.64.175.101
+ DEBUG [607d4f9b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/releases/20191004072241/tmp/cache )
+  INFO [607d4f9b] Finished in 0.408 seconds with exit status 0 (successful).
+ DEBUG [92337994] Running [ -L /var/www/chatspace-again/releases/20191004072241/tmp/sockets ] as ec2-user@54.64.175.101
+ DEBUG [92337994] Command: [ -L /var/www/chatspace-again/releases/20191004072241/tmp/sockets ]
+ DEBUG [92337994] Finished in 0.126 seconds with exit status 1 (failed).
+ DEBUG [23718821] Running [ -d /var/www/chatspace-again/releases/20191004072241/tmp/sockets ] as ec2-user@54.64.175.101
+ DEBUG [23718821] Command: [ -d /var/www/chatspace-again/releases/20191004072241/tmp/sockets ]
+ DEBUG [23718821] Finished in 0.110 seconds with exit status 1 (failed).
+  INFO [578f60e2] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/releases/20191004072241/tmp/sockets as ec2-user@54.64.175.101
+ DEBUG [578f60e2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/releases/20191004072241/tmp/sockets )
+  INFO [578f60e2] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [ad8f9781] Running [ -L /var/www/chatspace-again/releases/20191004072241/vendor/bundle ] as ec2-user@54.64.175.101
+ DEBUG [ad8f9781] Command: [ -L /var/www/chatspace-again/releases/20191004072241/vendor/bundle ]
+ DEBUG [ad8f9781] Finished in 0.134 seconds with exit status 1 (failed).
+ DEBUG [e40d4b6c] Running [ -d /var/www/chatspace-again/releases/20191004072241/vendor/bundle ] as ec2-user@54.64.175.101
+ DEBUG [e40d4b6c] Command: [ -d /var/www/chatspace-again/releases/20191004072241/vendor/bundle ]
+ DEBUG [e40d4b6c] Finished in 0.116 seconds with exit status 1 (failed).
+  INFO [83de7686] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/releases/20191004072241/vendor/bundle as ec2-user@54.64.175.101
+ DEBUG [83de7686] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/releases/20191004072241/vendor/bundle )
+  INFO [83de7686] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [35bc35be] Running [ -L /var/www/chatspace-again/releases/20191004072241/public/system ] as ec2-user@54.64.175.101
+ DEBUG [35bc35be] Command: [ -L /var/www/chatspace-again/releases/20191004072241/public/system ]
+ DEBUG [35bc35be] Finished in 0.116 seconds with exit status 1 (failed).
+ DEBUG [37bad924] Running [ -d /var/www/chatspace-again/releases/20191004072241/public/system ] as ec2-user@54.64.175.101
+ DEBUG [37bad924] Command: [ -d /var/www/chatspace-again/releases/20191004072241/public/system ]
+ DEBUG [37bad924] Finished in 0.116 seconds with exit status 1 (failed).
+  INFO [d3dc7636] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/releases/20191004072241/public/system as ec2-user@54.64.175.101
+ DEBUG [d3dc7636] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/releases/20191004072241/public/system )
+  INFO [d3dc7636] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [495a5ed3] Running [ -L /var/www/chatspace-again/releases/20191004072241/public/uploads ] as ec2-user@54.64.175.101
+ DEBUG [495a5ed3] Command: [ -L /var/www/chatspace-again/releases/20191004072241/public/uploads ]
+ DEBUG [495a5ed3] Finished in 0.122 seconds with exit status 1 (failed).
+ DEBUG [2d42980e] Running [ -d /var/www/chatspace-again/releases/20191004072241/public/uploads ] as ec2-user@54.64.175.101
+ DEBUG [2d42980e] Command: [ -d /var/www/chatspace-again/releases/20191004072241/public/uploads ]
+ DEBUG [2d42980e] Finished in 0.117 seconds with exit status 1 (failed).
+  INFO [22f3eb15] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/releases/20191004072241/public/uploads as ec2-user@54.64.175.101
+ DEBUG [22f3eb15] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/releases/20191004072241/public/uploads )
+  INFO [22f3eb15] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [d4e4a6a5] Running [ -L /var/www/chatspace-again/releases/20191004072241/public/assets ] as ec2-user@54.64.175.101
+ DEBUG [d4e4a6a5] Command: [ -L /var/www/chatspace-again/releases/20191004072241/public/assets ]
+ DEBUG [d4e4a6a5] Finished in 0.117 seconds with exit status 1 (failed).
+ DEBUG [5f0923cc] Running [ -d /var/www/chatspace-again/releases/20191004072241/public/assets ] as ec2-user@54.64.175.101
+ DEBUG [5f0923cc] Command: [ -d /var/www/chatspace-again/releases/20191004072241/public/assets ]
+ DEBUG [5f0923cc] Finished in 0.115 seconds with exit status 1 (failed).
+  INFO [2b75a85d] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/public/assets /var/www/chatspace-again/releases/20191004072241/public/assets as ec2-user@54.64.175.101
+ DEBUG [2b75a85d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/public/assets /var/www/chatspace-again/releases/20191004072241/public/assets )
+  INFO [2b75a85d] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [aaf94975] Running if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [aaf94975] Command: if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi
+ DEBUG [aaf94975] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [b61c2192] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/chatspace-again/shared/bundle as ec2-user@54.64.175.101
+ DEBUG [b61c2192] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/chatspace-again/shared/bundle )
+ DEBUG [b61c2192] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [b61c2192] 	The following gems are missing
+ DEBUG [b61c2192] 	 * rake (12.3.3)
+ DEBUG [b61c2192] 	 * concurrent-ruby (1.1.5)
+ DEBUG [b61c2192] 	 * i18n (1.6.0)
+ DEBUG [b61c2192] 	 * minitest (5.11.3)
+ DEBUG [b61c2192] 	 * thread_safe (0.3.6)
+ DEBUG [b61c2192] 	 * tzinfo (1.2.5)
+ DEBUG [b61c2192] 	 * activesupport (5.0.7.2)
+ DEBUG [b61c2192] 	 * builder (3.2.3)
+ DEBUG [b61c2192] 	 * erubis (2.7.0)
+ DEBUG [b61c2192] 	 * mini_portile2 (2.4.0)
+ DEBUG [b61c2192] 	 * nokogiri (1.10.4)
+ DEBUG [b61c2192] 	 * rails-dom-testing (2.0.3)
+ DEBUG [b61c2192] 	 * crass (1.0.4)
+ DEBUG [b61c2192] 	 * loofah (2.2.3)
+ DEBUG [b61c2192] 	 * rails-html-sanitizer (1.2.0)
+ DEBUG [b61c2192] 	 * actionview (5.0.7.2)
+ DEBUG [b61c2192] 	 * rack (2.0.7)
+ DEBUG [b61c2192] 	 * rack-test (0.6.3)
+ DEBUG [b61c2192] 	 * actionpack (5.0.7.2)
+ DEBUG [b61c2192] 	 * nio4r (2.5.1)
+ DEBUG [b61c2192] 	 * websocket-extensions (0.1.4)
+ DEBUG [b61c2192] 	 * websocket-driver (0.6.5)
+ DEBUG [b61c2192] 	 * actioncable (5.0.7.2)
+ DEBUG [b61c2192] 	 * globalid (0.4.2)
+ DEBUG [b61c2192] 	 * activejob (5.0.7.2)
+ DEBUG [b61c2192] 	 * mini_mime (1.0.2)
+ DEBUG [b61c2192] 	 * mail (2.7.1)
+ DEBUG [b61c2192] 	 * actionmailer (5.0.7.2)
+ DEBUG [b61c2192] 	 * activemodel (5.0.7.2)
+ DEBUG [b61c2192] 	 * arel (7.1.4)
+ DEBUG [b61c2192] 	 * activerecord (5.0.7.2)
+ DEBUG [b61c2192] 	 * public_suffix (4.0.1)
+ DEBUG [b61c2192] 	 * addressable (2.7.0)
+ DEBUG [b61c2192] 	 * net-ssh (5.2.0)
+ DEBUG [b61c2192] 	 * net-scp (2.0.0)
+ DEBUG [b61c2192] 	 * sshkit (1.20.0)
+ DEBUG [b61c2192] 	 * airbrussh (1.3.4)
+ DEBUG [b61c2192] 	 * bcrypt (3.1.13)
+ DEBUG [b61c2192] 	 * bindex (0.8.1)
+ DEBUG [b61c2192] 	 * byebug (11.0.1)
+ DEBUG [b61c2192] 	 * capistrano (3.11.2)
+ DEBUG [b61c2192] 	 * capistrano-bundler (1.6.0)
+ DEBUG [b61c2192] 	 * capistrano-rails (1.4.0)
+ DEBUG [b61c2192] 	 * capistrano-rbenv (2.1.4)
+ DEBUG [b61c2192] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [b61c2192] 	 * mini_magick (4.9.5)
+ DEBUG [b61c2192] 	 * ffi (1.11.1)
+ DEBUG [b61c2192] 	 * ruby-vips (2.0.15)
+ DEBUG [b61c2192] 	 * image_processing (1.9.3)
+ DEBUG [b61c2192] 	 * mimemagic (0.3.3)
+ DEBUG [b61c2192] 	 * carrierwave (2.0.1)
+ DEBUG [b61c2192] 	 * coderay (1.1.2)
+ DEBUG [b61c2192] 	 * coffee-script-source (1.12.2)
+ DEBUG [b61c2192] 	 * execjs (2.7.0)
+ DEBUG [b61c2192] 	 * coffee-script (2.4.1)
+ DEBUG [b61c2192] 	 * method_source (0.9.2)
+ DEBUG [b61c2192] 	 * thor (0.20.3)
+ DEBUG [b61c2192] 	 * railties (5.0.7.2)
+ DEBUG [b61c2192] 	 * coffee-rails (4.2.2)
+ DEBUG [b61c2192] 	 * orm_adapter (0.5.0)
+ DEBUG [b61c2192] 	 * responders (3.0.0)
+ DEBUG [b61c2192] 	 * warden (1.2.8)
+ DEBUG [b61c2192] 	 * devise (4.7.1)
+ DEBUG [b61c2192] 	 * font-awesome-rails (4.7.0.5)
+ DEBUG [b61c2192] 	 * temple (0.8.1)
+ DEBUG [b61c2192] 	 * tilt (2.0.9)
+ DEBUG [b61c2192] 	 * haml (5.1.2)
+ DEBUG [b61c2192] 	 * sexp_processor (4.12.1)
+ DEBUG [b61c2192] 	 * ruby_parser (3.13.1)
+ DEBUG [b61c2192] 	 * html2haml (2.2.0)
+ DEBUG [b61c2192] 	 * haml-rails (1.0.0)
+ DEBUG [b61c2192] 	 * jbuilder (2.9.1)
+ DEBUG [b61c2192] 	 * jquery-rails (4.3.5)
+ DEBUG [b61c2192] 	 * kgio (2.11.2)
+ DEBUG [b61c2192] 	 * rb-fsevent (0.10.3)
+ DEBUG [b61c2192] 	 * rb-inotify (0.10.0)
+ DEBUG [b61c2192] 	 * listen (3.0.8)
+ DEBUG [b61c2192] 	 * mysql2 (0.5.2)
+ DEBUG [b61c2192] 	 * pry (0.12.2)
+ DEBUG [b61c2192] 	 * pry-rails (0.3.9)
+ DEBUG [b61c2192] 	 * puma (3.12.1)
+ DEBUG [b61c2192] 	 * sprockets (3.7.2)
+ DEBUG [b61c2192] 	 * sprockets-rails (3.2.1)
+ DEBUG [b61c2192] 	 * rails (5.0.7.2)
+ DEBUG [b61c2192] 	 * raindrops (0.19.0)
+ DEBUG [b61c2192] 	 * sass-listen (4.0.0)
+ DEBUG [b61c2192] 	 * sass (3.7.4)
+ DEBUG [b61c2192] 	 * sass-rails (5.0.7)
+ DEBUG [b61c2192] 	 * spring (2.1.0)
+ DEBUG [b61c2192] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [b61c2192] 	 * turbolinks-source (5.2.0)
+ DEBUG [b61c2192] 	 * turbolinks (5.2.0)
+ DEBUG [b61c2192] 	 * uglifier (4.1.20)
+ DEBUG [b61c2192] 	 * unicorn (5.4.1)
+ DEBUG [b61c2192] 	 * web-console (3.7.0)
+ DEBUG [b61c2192] 	Install missing gems with `bundle install`
+ DEBUG [b61c2192] Finished in 0.466 seconds with exit status 1 (failed).
+  INFO [d650ebc7] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/chatspace-again/shared/bundle --jobs 4 --without development test --deployment --quiet as ec2-user@54.64.175.101
+ DEBUG [d650ebc7] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/chatspace-again/shared/bundle --jobs 4 --without development test --deployment --quiet )
+  INFO [d650ebc7] Finished in 87.928 seconds with exit status 0 (successful).
+ DEBUG [0f5fca23] Running if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [0f5fca23] Command: if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi
+ DEBUG [0f5fca23] Finished in 0.148 seconds with exit status 0 (successful).
+  INFO [b1c3772b] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ec2-user@54.64.175.101
+ DEBUG [b1c3772b] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:23.326590 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/application-8a3cd10a93d51091edb7c350e447eeab6a11deb682ee01803556d9926d1ae12a.js
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:23.342911 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/application-8a3cd10a93d51091edb7c350e447eeab6a11deb682ee01803556d9926d1ae12a.js.gz
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.521492 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/application-3066b648b4b39d622b7a6656b52209a7fad61ec975fbfa23db1717829cca55ec.css
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.521997 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/application-3066b648b4b39d622b7a6656b52209a7fad61ec975fbfa23db1717829cca55ec.css.gz
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.525664 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.525923 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot.gz
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.526496 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.532642 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07.woff
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.533188 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.533612 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf.gz
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.534153 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg
+ DEBUG [b1c3772b] 	I, [2019-10-04T07:24:24.536897 #17152]  INFO -- : Writing /var/www/chatspace-again/releases/20191004072241/public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg.gz
+  INFO [b1c3772b] Finished in 4.351 seconds with exit status 0 (successful).
+ DEBUG [3bc732dc] Running if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [3bc732dc] Command: if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi
+ DEBUG [3bc732dc] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [7c682076] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004072241/assets_manifest_backup as ec2-user@54.64.175.101
+ DEBUG [7c682076] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004072241/assets_manifest_backup )
+  INFO [7c682076] Finished in 0.121 seconds with exit status 0 (successful).
+ DEBUG [485a6331] Running /usr/bin/env ls /var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest* as ec2-user@54.64.175.101
+ DEBUG [485a6331] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest* )
+ DEBUG [485a6331] 	/var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json
+ DEBUG [485a6331] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [e2c7ad11] Running /usr/bin/env ls /var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest* as ec2-user@54.64.175.101
+ DEBUG [e2c7ad11] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest* )
+ DEBUG [e2c7ad11] 	/var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json
+ DEBUG [e2c7ad11] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [3f441cc9] Running /usr/bin/env cp /var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json /var/www/chatspace-again/releases/20191004072241/assets_manifest_backup as ec2-user@54.64.175.101
+ DEBUG [3f441cc9] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cp /var/www/chatspace-again/releases/20191004072241/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json /var/www/chatspace-again/releases/20191004072241/assets_manifest_backup )
+  INFO [3f441cc9] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [c95ddbfb] Running if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [c95ddbfb] Command: if test ! -d /var/www/chatspace-again/releases/20191004072241; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004072241'" 1>&2; false; fi
+ DEBUG [c95ddbfb] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [206e5493] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as ec2-user@54.64.175.101
+ DEBUG [206e5493] Command: cd /var/www/chatspace-again/releases/20191004072241 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [206e5493] Finished in 1.963 seconds with exit status 0 (successful).
+  INFO [88002048] Running /usr/bin/env ln -s /var/www/chatspace-again/releases/20191004072241 /var/www/chatspace-again/releases/current as ec2-user@54.64.175.101
+ DEBUG [88002048] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/releases/20191004072241 /var/www/chatspace-again/releases/current )
+  INFO [88002048] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [f9afa1fe] Running /usr/bin/env mv /var/www/chatspace-again/releases/current /var/www/chatspace-again as ec2-user@54.64.175.101
+ DEBUG [f9afa1fe] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mv /var/www/chatspace-again/releases/current /var/www/chatspace-again )
+  INFO [f9afa1fe] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [df24aa98] Running if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [df24aa98] Command: if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi
+ DEBUG [df24aa98] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [1b37c40b] Running [ -e /var/www/chatspace-again/shared/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid` as ec2-user@54.64.175.101
+ DEBUG [1b37c40b] Command: [ -e /var/www/chatspace-again/shared/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid`
+ DEBUG [1b37c40b] Finished in 0.114 seconds with exit status 1 (failed).
+  INFO [b837a5cc] Running $HOME/.rbenv/bin/rbenv exec bundle exec unicorn -c /var/www/chatspace-again/current/config/unicorn.rb -E deployment -D  as ec2-user@54.64.175.101
+ DEBUG [b837a5cc] Command: cd /var/www/chatspace-again/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec unicorn -c /var/www/chatspace-again/current/config/unicorn.rb -E deployment -D  )
+  INFO [b837a5cc] Finished in 0.455 seconds with exit status 0 (successful).
+ DEBUG [3c839785] Running if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [3c839785] Command: if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi
+ DEBUG [3c839785] Finished in 0.146 seconds with exit status 0 (successful).
+  INFO unicorn restarting...
+  INFO [7f1e5cbf] Running /usr/bin/env kill -s USR2 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid` as ec2-user@54.64.175.101
+ DEBUG [7f1e5cbf] Command: cd /var/www/chatspace-again/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env kill -s USR2 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid` )
+  INFO [7f1e5cbf] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [331818f3] Running /usr/bin/env ls -x /var/www/chatspace-again/releases as ec2-user@54.64.175.101
+ DEBUG [331818f3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls -x /var/www/chatspace-again/releases )
+ DEBUG [331818f3] 	20191004072241
+ DEBUG [331818f3] Finished in 0.177 seconds with exit status 0 (successful).
+ DEBUG [d13bbc39] Running if test ! -d /var/www/chatspace-again/releases; then echo "Directory does not exist '/var/www/chatspace-again/releases'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [d13bbc39] Command: if test ! -d /var/www/chatspace-again/releases; then echo "Directory does not exist '/var/www/chatspace-again/releases'" 1>&2; false; fi
+ DEBUG [d13bbc39] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [afde378d] Running /usr/bin/env echo "Branch master (at 28073f2b84ba444ff43319049b1605bded908b8e) deployed as release 20191004072241 by Chisaki" >> /var/www/chatspace-again/revisions.log as ec2-user@54.64.175.101
+ DEBUG [afde378d] Command: cd /var/www/chatspace-again/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 28073f2b84ba444ff43319049b1605bded908b8e) deployed as release 20191004072241 by Chisaki" >> /var/www/chatspace-again/revisions.log )
+  INFO [afde378d] Finished in 0.177 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-04 22:12:11 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [487ac17e] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as ec2-user@54.64.175.101
+ DEBUG [487ac17e] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [487ac17e] Finished in 0.728 seconds with exit status 0 (successful).
+ DEBUG [8a6f4403] Running [ ! -d /var/www/chatspace-again/shared/config ] as ec2-user@54.64.175.101
+ DEBUG [8a6f4403] Command: [ ! -d /var/www/chatspace-again/shared/config ]
+ DEBUG [8a6f4403] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [6415b9cd] Running mkdir -p /var/www/chatspace-again/shared/config as ec2-user@54.64.175.101
+ DEBUG [6415b9cd] Command: mkdir -p /var/www/chatspace-again/shared/config
+  INFO [6415b9cd] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG Uploading config/secrets.yml 0.0%
+  INFO Uploading config/secrets.yml 100.0%
+  INFO [43f4f2fb] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.64.175.101
+ DEBUG [43f4f2fb] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [43f4f2fb] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-chatspace-again-production-Chisaki.sh 0.0%
+  INFO Uploading /tmp/git-ssh-chatspace-again-production-Chisaki.sh 100.0%
+  INFO [25da2ea6] Running /usr/bin/env chmod 700 /tmp/git-ssh-chatspace-again-production-Chisaki.sh as ec2-user@54.64.175.101
+ DEBUG [25da2ea6] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-chatspace-again-production-Chisaki.sh )
+  INFO [25da2ea6] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [458fe711] Running /usr/bin/env git ls-remote git@github.com:ibe0606/chatspace-again.git HEAD as ec2-user@54.64.175.101
+ DEBUG [458fe711] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git ls-remote git@github.com:ibe0606/chatspace-again.git HEAD )
+ DEBUG [458fe711] 	759e9f8234f83349e3e7f8423a31756800a66027	HEAD
+  INFO [458fe711] Finished in 2.000 seconds with exit status 0 (successful).
+  INFO [45e1c4cb] Running /usr/bin/env mkdir -p /var/www/chatspace-again/shared /var/www/chatspace-again/releases as ec2-user@54.64.175.101
+ DEBUG [45e1c4cb] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/shared /var/www/chatspace-again/releases )
+  INFO [45e1c4cb] Finished in 0.097 seconds with exit status 0 (successful).
+  INFO [47e8d2fa] Running /usr/bin/env mkdir -p /var/www/chatspace-again/shared/log /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/shared/public/assets as ec2-user@54.64.175.101
+ DEBUG [47e8d2fa] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/shared/log /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/shared/public/assets )
+  INFO [47e8d2fa] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [3a848dec] Running /usr/bin/env mkdir -p /var/www/chatspace-again/shared/config as ec2-user@54.64.175.101
+ DEBUG [3a848dec] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/shared/config )
+  INFO [3a848dec] Finished in 0.095 seconds with exit status 0 (successful).
+ DEBUG [30f55b5c] Running [ -f /var/www/chatspace-again/shared/config/secrets.yml ] as ec2-user@54.64.175.101
+ DEBUG [30f55b5c] Command: [ -f /var/www/chatspace-again/shared/config/secrets.yml ]
+ DEBUG [30f55b5c] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [eba7dab4] Running [ -f /var/www/chatspace-again/current/REVISION ] as ec2-user@54.64.175.101
+ DEBUG [eba7dab4] Command: [ -f /var/www/chatspace-again/current/REVISION ]
+ DEBUG [eba7dab4] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [fd01c827] Running /usr/bin/env cat /var/www/chatspace-again/current/REVISION 2>/dev/null as ec2-user@54.64.175.101
+ DEBUG [fd01c827] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env cat /var/www/chatspace-again/current/REVISION 2>/dev/null )
+ DEBUG [fd01c827] 	28073f2b84ba444ff43319049b1605bded908b8e
+ DEBUG [fd01c827] Finished in 0.097 seconds with exit status 0 (successful).
+ DEBUG [13639c32] Running [ -f /var/www/chatspace-again/repo/HEAD ] as ec2-user@54.64.175.101
+ DEBUG [13639c32] Command: [ -f /var/www/chatspace-again/repo/HEAD ]
+ DEBUG [13639c32] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/chatspace-again/repo
+ DEBUG [d238c4e8] Running if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [d238c4e8] Command: if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi
+ DEBUG [d238c4e8] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO [8dee67f1] Running /usr/bin/env git remote set-url origin git@github.com:ibe0606/chatspace-again.git as ec2-user@54.64.175.101
+ DEBUG [8dee67f1] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git remote set-url origin git@github.com:ibe0606/chatspace-again.git )
+  INFO [8dee67f1] Finished in 0.098 seconds with exit status 0 (successful).
+  INFO [128b8ebe] Running /usr/bin/env git remote update --prune as ec2-user@54.64.175.101
+ DEBUG [128b8ebe] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [128b8ebe] 	Fetching origin
+ DEBUG [128b8ebe] 	From github.com:ibe0606/chatspace-again
+   28073f2..759e9f8  master     -> master
+  INFO [128b8ebe] Finished in 2.098 seconds with exit status 0 (successful).
+ DEBUG [cff9345c] Running if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [cff9345c] Command: if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi
+ DEBUG [cff9345c] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [d4a753fc] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215 as ec2-user@54.64.175.101
+ DEBUG [d4a753fc] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215 )
+  INFO [d4a753fc] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [0434794e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/chatspace-again/releases/20191004131215 as ec2-user@54.64.175.101
+ DEBUG [0434794e] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/chatspace-again/releases/20191004131215 )
+  INFO [0434794e] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [f8ea13a3] Running if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [f8ea13a3] Command: if test ! -d /var/www/chatspace-again/repo; then echo "Directory does not exist '/var/www/chatspace-again/repo'" 1>&2; false; fi
+ DEBUG [f8ea13a3] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [63c43823] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@54.64.175.101
+ DEBUG [63c43823] Command: cd /var/www/chatspace-again/repo && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-chatspace-again-production-Chisaki.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [63c43823] 	759e9f8234f83349e3e7f8423a31756800a66027
+ DEBUG [63c43823] Finished in 0.099 seconds with exit status 0 (successful).
+ DEBUG [9ba40a02] Running if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [9ba40a02] Command: if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi
+ DEBUG [9ba40a02] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [ebef3a06] Running /usr/bin/env echo "759e9f8234f83349e3e7f8423a31756800a66027" > REVISION as ec2-user@54.64.175.101
+ DEBUG [ebef3a06] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "759e9f8234f83349e3e7f8423a31756800a66027" > REVISION )
+  INFO [ebef3a06] Finished in 0.098 seconds with exit status 0 (successful).
+  INFO [e7b7a433] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215/config as ec2-user@54.64.175.101
+ DEBUG [e7b7a433] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215/config )
+  INFO [e7b7a433] Finished in 0.095 seconds with exit status 0 (successful).
+ DEBUG [7ba1c399] Running [ -L /var/www/chatspace-again/releases/20191004131215/config/secrets.yml ] as ec2-user@54.64.175.101
+ DEBUG [7ba1c399] Command: [ -L /var/www/chatspace-again/releases/20191004131215/config/secrets.yml ]
+ DEBUG [7ba1c399] Finished in 0.103 seconds with exit status 1 (failed).
+ DEBUG [b5f95ae1] Running [ -f /var/www/chatspace-again/releases/20191004131215/config/secrets.yml ] as ec2-user@54.64.175.101
+ DEBUG [b5f95ae1] Command: [ -f /var/www/chatspace-again/releases/20191004131215/config/secrets.yml ]
+ DEBUG [b5f95ae1] Finished in 0.111 seconds with exit status 1 (failed).
+  INFO [135237cd] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/config/secrets.yml /var/www/chatspace-again/releases/20191004131215/config/secrets.yml as ec2-user@54.64.175.101
+ DEBUG [135237cd] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/config/secrets.yml /var/www/chatspace-again/releases/20191004131215/config/secrets.yml )
+  INFO [135237cd] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [ed4dea9d] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215 /var/www/chatspace-again/releases/20191004131215/tmp /var/www/chatspace-again/releases/20191004131215/vendor /var/www/chatspace-again/releases/20191004131215/public as ec2-user@54.64.175.101
+ DEBUG [ed4dea9d] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215 /var/www/chatspace-again/releases/20191004131215/tmp /var/www/chatspace-again/releases/20191004131215/vendor /var/www/chatspace-again/releases/20191004131215/public )
+  INFO [ed4dea9d] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [39218999] Running [ -L /var/www/chatspace-again/releases/20191004131215/log ] as ec2-user@54.64.175.101
+ DEBUG [39218999] Command: [ -L /var/www/chatspace-again/releases/20191004131215/log ]
+ DEBUG [39218999] Finished in 0.096 seconds with exit status 1 (failed).
+ DEBUG [99a8968d] Running [ -d /var/www/chatspace-again/releases/20191004131215/log ] as ec2-user@54.64.175.101
+ DEBUG [99a8968d] Command: [ -d /var/www/chatspace-again/releases/20191004131215/log ]
+ DEBUG [99a8968d] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [42e871a6] Running /usr/bin/env rm -rf /var/www/chatspace-again/releases/20191004131215/log as ec2-user@54.64.175.101
+ DEBUG [42e871a6] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /var/www/chatspace-again/releases/20191004131215/log )
+  INFO [42e871a6] Finished in 0.098 seconds with exit status 0 (successful).
+  INFO [ba5b5303] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/log /var/www/chatspace-again/releases/20191004131215/log as ec2-user@54.64.175.101
+ DEBUG [ba5b5303] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/log /var/www/chatspace-again/releases/20191004131215/log )
+  INFO [ba5b5303] Finished in 0.095 seconds with exit status 0 (successful).
+ DEBUG [e7eead25] Running [ -L /var/www/chatspace-again/releases/20191004131215/tmp/pids ] as ec2-user@54.64.175.101
+ DEBUG [e7eead25] Command: [ -L /var/www/chatspace-again/releases/20191004131215/tmp/pids ]
+ DEBUG [e7eead25] Finished in 0.095 seconds with exit status 1 (failed).
+ DEBUG [d813cebb] Running [ -d /var/www/chatspace-again/releases/20191004131215/tmp/pids ] as ec2-user@54.64.175.101
+ DEBUG [d813cebb] Command: [ -d /var/www/chatspace-again/releases/20191004131215/tmp/pids ]
+ DEBUG [d813cebb] Finished in 0.096 seconds with exit status 1 (failed).
+  INFO [23b146a5] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/releases/20191004131215/tmp/pids as ec2-user@54.64.175.101
+ DEBUG [23b146a5] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/pids /var/www/chatspace-again/releases/20191004131215/tmp/pids )
+  INFO [23b146a5] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [064715f9] Running [ -L /var/www/chatspace-again/releases/20191004131215/tmp/cache ] as ec2-user@54.64.175.101
+ DEBUG [064715f9] Command: [ -L /var/www/chatspace-again/releases/20191004131215/tmp/cache ]
+ DEBUG [064715f9] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [72b52628] Running [ -d /var/www/chatspace-again/releases/20191004131215/tmp/cache ] as ec2-user@54.64.175.101
+ DEBUG [72b52628] Command: [ -d /var/www/chatspace-again/releases/20191004131215/tmp/cache ]
+ DEBUG [72b52628] Finished in 0.095 seconds with exit status 1 (failed).
+  INFO [fc4e4c60] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/releases/20191004131215/tmp/cache as ec2-user@54.64.175.101
+ DEBUG [fc4e4c60] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/cache /var/www/chatspace-again/releases/20191004131215/tmp/cache )
+  INFO [fc4e4c60] Finished in 0.097 seconds with exit status 0 (successful).
+ DEBUG [cf5f35ff] Running [ -L /var/www/chatspace-again/releases/20191004131215/tmp/sockets ] as ec2-user@54.64.175.101
+ DEBUG [cf5f35ff] Command: [ -L /var/www/chatspace-again/releases/20191004131215/tmp/sockets ]
+ DEBUG [cf5f35ff] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [3214bdd1] Running [ -d /var/www/chatspace-again/releases/20191004131215/tmp/sockets ] as ec2-user@54.64.175.101
+ DEBUG [3214bdd1] Command: [ -d /var/www/chatspace-again/releases/20191004131215/tmp/sockets ]
+ DEBUG [3214bdd1] Finished in 0.104 seconds with exit status 1 (failed).
+  INFO [a0c0d2fa] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/releases/20191004131215/tmp/sockets as ec2-user@54.64.175.101
+ DEBUG [a0c0d2fa] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/tmp/sockets /var/www/chatspace-again/releases/20191004131215/tmp/sockets )
+  INFO [a0c0d2fa] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [d868eac8] Running [ -L /var/www/chatspace-again/releases/20191004131215/vendor/bundle ] as ec2-user@54.64.175.101
+ DEBUG [d868eac8] Command: [ -L /var/www/chatspace-again/releases/20191004131215/vendor/bundle ]
+ DEBUG [d868eac8] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [079d2d2c] Running [ -d /var/www/chatspace-again/releases/20191004131215/vendor/bundle ] as ec2-user@54.64.175.101
+ DEBUG [079d2d2c] Command: [ -d /var/www/chatspace-again/releases/20191004131215/vendor/bundle ]
+ DEBUG [079d2d2c] Finished in 0.096 seconds with exit status 1 (failed).
+  INFO [a3fce701] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/releases/20191004131215/vendor/bundle as ec2-user@54.64.175.101
+ DEBUG [a3fce701] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/vendor/bundle /var/www/chatspace-again/releases/20191004131215/vendor/bundle )
+  INFO [a3fce701] Finished in 0.096 seconds with exit status 0 (successful).
+ DEBUG [31d797bb] Running [ -L /var/www/chatspace-again/releases/20191004131215/public/system ] as ec2-user@54.64.175.101
+ DEBUG [31d797bb] Command: [ -L /var/www/chatspace-again/releases/20191004131215/public/system ]
+ DEBUG [31d797bb] Finished in 0.095 seconds with exit status 1 (failed).
+ DEBUG [82e340dd] Running [ -d /var/www/chatspace-again/releases/20191004131215/public/system ] as ec2-user@54.64.175.101
+ DEBUG [82e340dd] Command: [ -d /var/www/chatspace-again/releases/20191004131215/public/system ]
+ DEBUG [82e340dd] Finished in 0.094 seconds with exit status 1 (failed).
+  INFO [7ce86feb] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/releases/20191004131215/public/system as ec2-user@54.64.175.101
+ DEBUG [7ce86feb] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/public/system /var/www/chatspace-again/releases/20191004131215/public/system )
+  INFO [7ce86feb] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [2387c18a] Running [ -L /var/www/chatspace-again/releases/20191004131215/public/uploads ] as ec2-user@54.64.175.101
+ DEBUG [2387c18a] Command: [ -L /var/www/chatspace-again/releases/20191004131215/public/uploads ]
+ DEBUG [2387c18a] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [e258e7cc] Running [ -d /var/www/chatspace-again/releases/20191004131215/public/uploads ] as ec2-user@54.64.175.101
+ DEBUG [e258e7cc] Command: [ -d /var/www/chatspace-again/releases/20191004131215/public/uploads ]
+ DEBUG [e258e7cc] Finished in 0.100 seconds with exit status 1 (failed).
+  INFO [ee395f33] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/releases/20191004131215/public/uploads as ec2-user@54.64.175.101
+ DEBUG [ee395f33] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/public/uploads /var/www/chatspace-again/releases/20191004131215/public/uploads )
+  INFO [ee395f33] Finished in 0.097 seconds with exit status 0 (successful).
+ DEBUG [c1d3ea73] Running [ -L /var/www/chatspace-again/releases/20191004131215/public/assets ] as ec2-user@54.64.175.101
+ DEBUG [c1d3ea73] Command: [ -L /var/www/chatspace-again/releases/20191004131215/public/assets ]
+ DEBUG [c1d3ea73] Finished in 0.097 seconds with exit status 1 (failed).
+ DEBUG [c3102fdc] Running [ -d /var/www/chatspace-again/releases/20191004131215/public/assets ] as ec2-user@54.64.175.101
+ DEBUG [c3102fdc] Command: [ -d /var/www/chatspace-again/releases/20191004131215/public/assets ]
+ DEBUG [c3102fdc] Finished in 0.095 seconds with exit status 1 (failed).
+  INFO [0659efbe] Running /usr/bin/env ln -s /var/www/chatspace-again/shared/public/assets /var/www/chatspace-again/releases/20191004131215/public/assets as ec2-user@54.64.175.101
+ DEBUG [0659efbe] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/shared/public/assets /var/www/chatspace-again/releases/20191004131215/public/assets )
+  INFO [0659efbe] Finished in 0.098 seconds with exit status 0 (successful).
+ DEBUG [41097995] Running if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [41097995] Command: if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi
+ DEBUG [41097995] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [cdd77a24] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/chatspace-again/shared/bundle as ec2-user@54.64.175.101
+ DEBUG [cdd77a24] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/chatspace-again/shared/bundle )
+ DEBUG [cdd77a24] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [cdd77a24] 	The following gems are missing
+ DEBUG [cdd77a24] 	 * net-ssh (5.2.0)
+ DEBUG [cdd77a24] 	 * net-scp (2.0.0)
+ DEBUG [cdd77a24] 	 * sshkit (1.20.0)
+ DEBUG [cdd77a24] 	 * airbrussh (1.3.4)
+ DEBUG [cdd77a24] 	 * bindex (0.8.1)
+ DEBUG [cdd77a24] 	 * byebug (11.0.1)
+ DEBUG [cdd77a24] 	 * capistrano (3.11.2)
+ DEBUG [cdd77a24] 	 * capistrano-bundler (1.6.0)
+ DEBUG [cdd77a24] 	 * capistrano-rails (1.4.0)
+ DEBUG [cdd77a24] 	 * capistrano-rbenv (2.1.4)
+ DEBUG [cdd77a24] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [cdd77a24] 	 * coderay (1.1.2)
+ DEBUG [cdd77a24] 	 * excon (0.67.0)
+ DEBUG [cdd77a24] 	 * formatador (0.2.5)
+ DEBUG [cdd77a24] 	 * mime-types-data (3.2019.0904)
+ DEBUG [cdd77a24] 	 * mime-types (3.3)
+ DEBUG [cdd77a24] 	 * fog-core (2.1.2)
+ DEBUG [cdd77a24] 	 * multi_json (1.13.1)
+ DEBUG [cdd77a24] 	 * fog-json (1.2.0)
+ DEBUG [cdd77a24] 	 * fog-xml (0.1.3)
+ DEBUG [cdd77a24] 	 * ipaddress (0.8.3)
+ DEBUG [cdd77a24] 	 * fog-aws (3.5.2)
+ DEBUG [cdd77a24] 	 * listen (3.0.8)
+ DEBUG [cdd77a24] 	 * pry (0.12.2)
+ DEBUG [cdd77a24] 	 * pry-rails (0.3.9)
+ DEBUG [cdd77a24] 	 * spring (2.1.0)
+ DEBUG [cdd77a24] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [cdd77a24] 	 * web-console (3.7.0)
+ DEBUG [cdd77a24] 	Install missing gems with `bundle install`
+ DEBUG [cdd77a24] Finished in 0.360 seconds with exit status 1 (failed).
+  INFO [e48bbe0d] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/chatspace-again/shared/bundle --jobs 4 --without development test --deployment --quiet as ec2-user@54.64.175.101
+ DEBUG [e48bbe0d] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/chatspace-again/shared/bundle --jobs 4 --without development test --deployment --quiet )
+  INFO [e48bbe0d] Finished in 4.157 seconds with exit status 0 (successful).
+ DEBUG [ae290153] Running if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [ae290153] Command: if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi
+ DEBUG [ae290153] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [4b47bc44] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ec2-user@54.64.175.101
+ DEBUG [4b47bc44] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+  INFO [4b47bc44] Finished in 3.715 seconds with exit status 0 (successful).
+ DEBUG [0758c924] Running if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [0758c924] Command: if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi
+ DEBUG [0758c924] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [53bc3c75] Running /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215/assets_manifest_backup as ec2-user@54.64.175.101
+ DEBUG [53bc3c75] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/chatspace-again/releases/20191004131215/assets_manifest_backup )
+  INFO [53bc3c75] Finished in 0.099 seconds with exit status 0 (successful).
+ DEBUG [2041092b] Running /usr/bin/env ls /var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest* as ec2-user@54.64.175.101
+ DEBUG [2041092b] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest* )
+ DEBUG [2041092b] 	/var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json
+ DEBUG [2041092b] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [38ce7d69] Running /usr/bin/env ls /var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest* as ec2-user@54.64.175.101
+ DEBUG [38ce7d69] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest* )
+ DEBUG [38ce7d69] 	/var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json
+ DEBUG [38ce7d69] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [93de4298] Running /usr/bin/env cp /var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json /var/www/chatspace-again/releases/20191004131215/assets_manifest_backup as ec2-user@54.64.175.101
+ DEBUG [93de4298] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env cp /var/www/chatspace-again/releases/20191004131215/public/assets/.sprockets-manifest-c17eab15c81bdcb37b47dcce33811354.json /var/www/chatspace-again/releases/20191004131215/assets_manifest_backup )
+  INFO [93de4298] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [d298a428] Running if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [d298a428] Command: if test ! -d /var/www/chatspace-again/releases/20191004131215; then echo "Directory does not exist '/var/www/chatspace-again/releases/20191004131215'" 1>&2; false; fi
+ DEBUG [d298a428] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [f8b2eb60] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as ec2-user@54.64.175.101
+ DEBUG [f8b2eb60] Command: cd /var/www/chatspace-again/releases/20191004131215 && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [f8b2eb60] Finished in 2.164 seconds with exit status 0 (successful).
+  INFO [59b38197] Running /usr/bin/env ln -s /var/www/chatspace-again/releases/20191004131215 /var/www/chatspace-again/releases/current as ec2-user@54.64.175.101
+ DEBUG [59b38197] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/chatspace-again/releases/20191004131215 /var/www/chatspace-again/releases/current )
+  INFO [59b38197] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [0c72827e] Running /usr/bin/env mv /var/www/chatspace-again/releases/current /var/www/chatspace-again as ec2-user@54.64.175.101
+ DEBUG [0c72827e] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env mv /var/www/chatspace-again/releases/current /var/www/chatspace-again )
+  INFO [0c72827e] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [9aa123ab] Running if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [9aa123ab] Command: if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi
+ DEBUG [9aa123ab] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [75d5e1c6] Running [ -e /var/www/chatspace-again/shared/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid` as ec2-user@54.64.175.101
+ DEBUG [75d5e1c6] Command: [ -e /var/www/chatspace-again/shared/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid`
+ DEBUG [75d5e1c6] 	bash: 0 行: kill: (17386) - そのようなプロセスはありません
+ DEBUG [75d5e1c6] Finished in 0.099 seconds with exit status 1 (failed).
+  INFO [fa714262] Running $HOME/.rbenv/bin/rbenv exec bundle exec unicorn -c /var/www/chatspace-again/current/config/unicorn.rb -E deployment -D  as ec2-user@54.64.175.101
+ DEBUG [fa714262] Command: cd /var/www/chatspace-again/current && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec unicorn -c /var/www/chatspace-again/current/config/unicorn.rb -E deployment -D  )
+  INFO [fa714262] Finished in 0.523 seconds with exit status 0 (successful).
+ DEBUG [a4502dba] Running if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [a4502dba] Command: if test ! -d /var/www/chatspace-again/current; then echo "Directory does not exist '/var/www/chatspace-again/current'" 1>&2; false; fi
+ DEBUG [a4502dba] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO unicorn restarting...
+  INFO [e59e08d4] Running /usr/bin/env kill -s USR2 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid` as ec2-user@54.64.175.101
+ DEBUG [e59e08d4] Command: cd /var/www/chatspace-again/current && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env kill -s USR2 `cat /var/www/chatspace-again/shared/tmp/pids/unicorn.pid` )
+  INFO [e59e08d4] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [dc4f382f] Running /usr/bin/env ls -x /var/www/chatspace-again/releases as ec2-user@54.64.175.101
+ DEBUG [dc4f382f] Command: ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env ls -x /var/www/chatspace-again/releases )
+ DEBUG [dc4f382f] 	20191004072241	20191004131215
+ DEBUG [dc4f382f] Finished in 0.152 seconds with exit status 0 (successful).
+ DEBUG [7aecde78] Running if test ! -d /var/www/chatspace-again/releases; then echo "Directory does not exist '/var/www/chatspace-again/releases'" 1>&2; false; fi as ec2-user@54.64.175.101
+ DEBUG [7aecde78] Command: if test ! -d /var/www/chatspace-again/releases; then echo "Directory does not exist '/var/www/chatspace-again/releases'" 1>&2; false; fi
+ DEBUG [7aecde78] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [b9ee6d85] Running /usr/bin/env echo "Branch master (at 759e9f8234f83349e3e7f8423a31756800a66027) deployed as release 20191004131215 by Chisaki" >> /var/www/chatspace-again/revisions.log as ec2-user@54.64.175.101
+ DEBUG [b9ee6d85] Command: cd /var/www/chatspace-again/releases && ( export RBENV_ROOT="$HOME/.rbenv" PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" AWS_ACCESS_KEY_ID="" AWS_SECRET_ACCESS_KEY="" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 759e9f8234f83349e3e7f8423a31756800a66027) deployed as release 20191004131215 by Chisaki" >> /var/www/chatspace-again/revisions.log )
+  INFO [b9ee6d85] Finished in 0.155 seconds with exit status 0 (successful).
